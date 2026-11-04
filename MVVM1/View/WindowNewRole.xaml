@@ -1,0 +1,27 @@
+﻿<Window x:Class="MVVM1.View.WindowNewRole"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Role" Height="220" Width="320" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,5">
+            <Label Content="ID:" Width="80"/>
+            <TextBox Text="{Binding Id}" IsEnabled="False" Width="180"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,5">
+            <Label Content="Role Name:" Width="80"/>
+            <TextBox Text="{Binding NameRole, UpdateSourceTrigger=PropertyChanged}" Width="180"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Content="Save"   IsDefault="True" Width="75" Margin="0,0,10,0" Click="Save_Click"/>
+            <Button Content="Cancel" IsCancel="True"  Width="75"/>
+        </StackPanel>
+    </Grid>
+</Window>
